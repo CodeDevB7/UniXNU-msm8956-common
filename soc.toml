@@ -1,0 +1,14 @@
+schema_version = 2
+
+[soc]
+name = "MSM8956"
+family = "Snapdragon 650"
+arch = "arm64"
+description = "Qualcomm MSM8956 (Snapdragon 650) common definitions"
+
+[controllers]
+interrupt_controller = "GICv2"
+gic_distributor = "0x0b000000"
+gic_cpu = "0x0b002000"
+timer = "0x0b120000"
+uart = "0x078b0000"
