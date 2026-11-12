@@ -37,17 +37,17 @@
             enable-method = "psci";
         };
 
-        // Cortex-A72 Big Cluster (CPUs 4-5)
+        // Cortex-A72 Big Cluster (CPUs 4-5; MPIDR 0x101/0x102 are NAK on Kenzo)
         CPU4: cpu@100 {
             device_type = "cpu";
             compatible = "arm,cortex-a72", "arm,armv8";
             reg = <0x100>;
             enable-method = "psci";
         };
-        CPU5: cpu@101 {
+        CPU5: cpu@103 {
             device_type = "cpu";
             compatible = "arm,cortex-a72", "arm,armv8";
-            reg = <0x101>;
+            reg = <0x103>;
             enable-method = "psci";
         };
     };
@@ -83,8 +83,8 @@
 
         serial0: serial@78b0000 {
             compatible = "qcom,msm-lsuart-v14", "qcom,msm-uart";
-            reg = <0x078b0000 0x1000>;
-            interrupts = <0 108 0>;
+            reg = <0x078b0000 0x200>;
+            interrupts = <0 0x6c 0>;
             status = "okay";
         };
     };
